@@ -2,8 +2,9 @@ const express = require('express')
 const app = express()
 
 app.get('/', (req, res) => {
-    process.exit
-    res.send('Hello World!')
+    setTimeout(function () {
+        throw new Error('We crashed!!!!!');
+  }, 10);
 })
 
 app.listen(3000, () => console.log('Example app listening on port 8080!'))
