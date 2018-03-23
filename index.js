@@ -1,10 +1,9 @@
 const express = require('express')
 const app = express()
+const numCPUs = require('os').cpus().length;
 
 app.get('/', (req, res) => {
-    setTimeout(function () {
-        throw new Error('We crashed!!!!!');
-  }, 10);
+    res.send({message: 'Hello party people', numCPUs})
 })
 
 app.listen(3000, () => console.log('Example app listening on port 8080!'))
